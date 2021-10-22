@@ -23,13 +23,14 @@ provider azurerm {
   }
 }
 
-resource "azurerm_resource_group" "tf-dev-rg" {
-    location = "eastus"
-  count = 2
-  name = "dev-rg-${count.index}"
-  tags = {
-    "environment" = "Dev"
-    "Cost Center" = "IND"
-  }
+provider "azurerm" {
+    features {
+    virtual_machine {
+      # delete_os_disk_on_deletion = false
+    }
+
+    }
+   
+  alias = "azurerm-west" 
 }
 
