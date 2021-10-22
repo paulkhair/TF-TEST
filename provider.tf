@@ -5,16 +5,13 @@ terraform {
       source = "hashicorp/azurerm"
       version = ">= 2.8.0"
      }
-  }
-  /*
-  required_providers {
+    
     random = {
       source = "hashicorp/random"
-      version = "~> 3.1.0"
-     }
-     
-  }
-  */
+      version = "3.1.0"
+    }      
+   }
+
 }
 
 provider azurerm {
@@ -31,6 +28,9 @@ provider "azurerm" {
 
     }
    
-  alias = "azurerm-west" 
+  alias = "azurerm-westus" 
 }
 
+provider "random" {
+  
+}
