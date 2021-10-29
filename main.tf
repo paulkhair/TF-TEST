@@ -29,15 +29,16 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "azrsgsoan0001-rg1" {
   #count    = "3"
-  for_each = {
-    "dev" = "azrsgdevn001"
-    "tst" = "azrsgtstn001"
-    "uat" = "azrsguatn001"
 
+   for_each = {
+    "dev" = "azrsgdevn001"
+    "tst"= "azrsgtstn001"
+    "uat"= "azrsguatn001"
+    
   }
 
   location = "eastus"
-  name     = "azrsgsoan0001-${each.value}"
+  name = "azrsgsoan0001-${each.value}"
   tags = {
     "environment" = "${each.key}-new"
     "Costcenter"  = "India-new"
