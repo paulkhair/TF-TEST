@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "tf-dev-rg" {
-    location = "westus"
+  location = "westus"
   # count = 2
   #name = "dev-rg-${count.index}"
   name = "dev-rg-0"
@@ -10,10 +10,12 @@ resource "azurerm_resource_group" "tf-dev-rg" {
 }
 
 resource "azurerm_resource_group" "tf-dev-rg1" {
-    location = "westus"
-  count = 2
-  name = "dev-rg-${count.index}"
+
+  location = "westus"
+  count    = 2
+  name     = "dev-rg-${count.index}"
   #name = "dev-rg-0"
+
   tags = {
     "environment" = "UAT"
     "Cost Center" = "WEST"

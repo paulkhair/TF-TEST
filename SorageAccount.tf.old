@@ -1,0 +1,14 @@
+resource "random_string" "randomvalue" {
+  lower   = true
+  length  = "4"
+  number  = false
+  special = false
+}
+resource "azurerm_storage_account" "AZSTASOAN01" {
+  name                     = "azstasoan0001name"
+  location                 = azurerm_resource_group.tf-dev-rg.location
+  resource_group_name      = azurerm_resource_group.tf-dev-rg.name
+  account_replication_type = "LRS"
+  account_tier             = "Standard"
+
+}
