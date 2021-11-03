@@ -6,11 +6,17 @@ resource "azurerm_virtual_network" "vnt-dev1" {
   tags = local.Common_tags
 }
 
-# Create Subnet
-resource "azurerm_subnet" "mysubnet" {
-  #name                 = var.subnet_name
-  name                 = "${azurerm_virtual_network.myvnet.name}-${var.subnet_name}"
-  resource_group_name  = azurerm_resource_group.myrg.name
-  virtual_network_name = azurerm_virtual_network.myvnet.name
-  address_prefixes     = ["10.3.0.0/24"]
+
+resource "azurerm_subnet" "db-subnet" {
+  name                 = "azurerm_virtual_network.vnt-dev1.name-${var.subnet_name}"
+  resource_group_name  = azurerm_resource_group.rg-dev1.name
+  virtual_network_name = azurerm_virtual_network.vnt-dev1.name
+  address_prefixes     = ["172.19.99.0/24"]
+}
+
+resource "azurerm_subnet" "pe-subnet" {
+  name                 = "azurerm_virtual_network.vnt-dev1.name-${var.subnet_name}"
+  resource_group_name  = azurerm_resource_group.rg-dev1.name
+  virtual_network_name = azurerm_virtual_network.vnt-dev1.name
+  address_prefixes     = ["172.19.100.0/24"]
 }

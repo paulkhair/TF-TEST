@@ -39,7 +39,6 @@ variable "location" {
   description = "Azure environment location details"
   default     = "west europe"
   type        = string
-
 }
 
 variable "application" {
@@ -64,7 +63,6 @@ variable "env" {
   default     = "Dev"
   type        = string
   description = "Provide information of environment of resource"
-
 }
 
 variable "dev_virtual_network_address_space" {
