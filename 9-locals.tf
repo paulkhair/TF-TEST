@@ -3,7 +3,7 @@ locals {
     Environment = "${var.env}"
     costcenter  = "${var.costcenter}"
     Role        = "${var.role}"
-    Application = "${var.application}"
+    Application = "${var.application[0]}"
     
   }
 
