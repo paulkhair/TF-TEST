@@ -1,11 +1,11 @@
-variable "rg_name" {
+variable "rgp_name" {
   description = "Provide main resource gorup name"
   type        = string
-  default     = "azrgpsoan0001"
+  default     = "azrgpsoan000"
 }
 
 variable "vnt_name" {
-  description = "Hosting Platfor Az -azure"
+  description = "Provide main VNET gorup name"
   type        = string
   default     = "azvntsoan0001"
 }

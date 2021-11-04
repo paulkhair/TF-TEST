@@ -1,7 +1,8 @@
 resource "azurerm_resource_group" "rg-dev1" {
   location = var.location
-  name     = "${var.rg_name}"
-   
+  name     = "${var.rgp_name} ${count.index}"
+  count = "2"
+    
   tags     = local.Common_tags
 }
 
