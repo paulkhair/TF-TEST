@@ -1,3 +1,18 @@
+variable "rg_name" {
+  description = "Provide main resource gorup name"
+  type        = string
+  default     = "azrgpsoan0001"
+}
+
+variable "vnt_name" {
+  description = "Hosting Platfor Az -azure"
+  type        = string
+  default     = "azvntsoan0001"
+}
+
+
+
+
 variable "platform" {
   description = "Hosting Platfor Az -azure"
   type        = string
@@ -43,7 +58,7 @@ variable "location" {
 
 variable "application" {
   description = "Application information"
-  default     = ["SOA" ,"FIT","TRIO","PTC"]
+  default     = ["SOA", "FIT", "TRIO", "PTC"]
   type        = list(string)
 }
 
@@ -67,58 +82,105 @@ variable "env" {
 
 variable "dev_virtual_network_address_space" {
   description = "Provide all address range of network"
-  type = list(string)
-  default     = ["172.19.99.0/24", "172.19.100.0/24", "172.19.101.0/24","172.19.102.0/24"]
+  type        = list(string)
+  default     = ["172.19.99.0/24", "172.19.100.0/24", "172.19.101.0/24", "172.19.102.0/24"]
 }
 
 variable "dev_db_subnet_address_space" {
   description = "Provide subnet for DB resources in network"
-  type = string
+  type        = list(string)
   default     = ["172.19.99.0/25"]
+}
+variable "dev_db_subnet_name" {
+  description = "Provide name for DB resources in network"
+  type        = string
+  default     = "dev_db_subnet"
 }
 
 variable "dev_web_subnet_address_space" {
   description = "Provide subnet for web resources in network"
-  type = string 
+  type        = list(string)
   default     = ["172.19.99.128/25"]
 }
+variable "dev_web_subnet_name" {
+  description = "Provide subnet for web resources in network"
+  type        = string
+  default     = "dev_web_subnet"
+}
+
 variable "dev_pe_subnet_address_space" {
   description = "Provide subnet for Private endpoints resources in network"
-  type = string 
+  type        = list(string)
   default     = ["172.19.100.0/25"]
 }
+variable "dev_pe_subnet_name" {
+  description = "Provide name for dev pe resources in network"
+  type        = string
+  default     = "dev_pe_subnet"
+}
+
 
 variable "dev_gw_subnet_address_space" {
   description = "Provide subnet for Gateway resources in network"
-  type = string 
+  type        = list(string)
   default     = ["172.19.100.128/26"]
 }
+variable "dev_gw_subnet_name" {
+  description = "Provide name for Gateway resources in network"
+  type        = string
+  default     = "dev_gw_subnet"
+}
+
 variable "uat_db_subnet_address_space" {
   description = "Provide subnet for DB resources in network"
-  type = string 
+  type        = list(string)
   default     = ["172.19.101.0/24"]
 }
+variable "uat_db_subnet_name" {
+  description = "Provide name for DB resources in network"
+  type        = string
+  default     = "uat_db_subnet"
+}
+
 
 variable "uat_web_subnet_address_space" {
   description = "Provide subnet for web resources in network"
-  type = string
+  type        = list(string)
   default     = ["172.19.102.0/25"]
 }
+variable "uat_web_subnet_name" {
+  description = "Provide name for Web resources in network"
+  type        = string
+  default     = "uat_web_subnet"
+}
+
 variable "uat_pe_subnet_address_space" {
   description = "Provide subnet for Private endpoint resources in network"
-  type = string
+  type        = list(string)
   default     = ["172.19.102.128/25"]
 }
+variable "uat_pe_subnet_name" {
+  description = "Provide name for PE resources in network"
+  type        = string
+  default     = "uat_pe_subnet"
+}
+
 
 variable "uat_gw_subnet_address_space" {
   description = "Provide subnet for Gateway resources in network"
-  type = string 
+  type        = list(string)
   default     = ["172.19.100.192/26"]
 }
+variable "uat_gw_subnet_name" {
+  description = "Provide name for Gateway resources in network"
+  type        = string
+  default     = "uat_gw_subnet"
+}
+
 
 variable "hub_virtual_network_id" {
   description = "Provide subnet for Gateway resources in network"
-  type = string 
+  type        = string
   default     = "/subscriptions/bc4aec72-c094-481d-ae83-5f7fe33e5db5/resourceGroups/AZRGPNETP0001_HUB/providers/Microsoft.Network/virtualNetworks/AZVNTHUBP0001"
 }
 

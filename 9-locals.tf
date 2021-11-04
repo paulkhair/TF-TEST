@@ -4,7 +4,7 @@ locals {
     costcenter  = "${var.costcenter}"
     Role        = "${var.role}"
     Application = "${var.application[0]}"
-    
+
   }
 
 }
